@@ -17,12 +17,12 @@ class Tree
       if node.left_child
         insert(value, node.left_child)
       else
-        node.left_child = Node.new(value: value)
+        node.left_child = Node.new(value:)
       end
     elsif node.right_child
       insert(value, node.right_child)
     else
-      node.right_child = Node.new(value: value)
+      node.right_child = Node.new(value:)
     end
   end
 
@@ -53,14 +53,14 @@ class Tree
     end
   end
 
-  def iterate(node = @root, &block)
+  def iterate(node = @root, &)
     return unless node
 
-    iterate(node.left_child, &block)
+    iterate(node.left_child, &)
 
     yield(node)
 
-    iterate(node.right_child, &block)
+    iterate(node.right_child, &)
   end
 
   private
