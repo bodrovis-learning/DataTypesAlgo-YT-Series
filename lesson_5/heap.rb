@@ -58,7 +58,7 @@ class Heap
   end
 
   def larger_child_index(indexes)
-    indexes => {lc_index:, rc_index:}
+    indexes => { lc_index:, rc_index: }
 
     return lc_index if !in_bounds?(rc_index) || @data[rc_index] < @data[lc_index]
 
@@ -66,7 +66,7 @@ class Heap
   end
 
   def greater_child?(indexes)
-    indexes => {lc_index:, rc_index:, c_index:}
+    indexes => { lc_index:, rc_index:, c_index: }
 
     (in_bounds?(lc_index) && @data[lc_index] > @data[c_index]) ||
       (in_bounds?(rc_index) && @data[rc_index] > @data[c_index])
