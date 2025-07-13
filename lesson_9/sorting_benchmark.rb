@@ -4,7 +4,7 @@ require 'benchmark'
 require_relative 'sorters/quicksort'
 require_relative 'sorters/mergesort'
 
-sizes = [1_000, 5_000, 10_000]#, 50_000]
+sizes = [1_000, 5_000, 10_000] # , 50_000]
 iterations = 5
 
 data = {}
