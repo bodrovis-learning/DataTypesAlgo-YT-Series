@@ -33,8 +33,6 @@ class BTree
         child_to_follow = children[index]
         break
 
-
-
       end
 
       index += 1
@@ -44,9 +42,7 @@ class BTree
     if current_value && search_value > current_value
       return [false, node_file, index] unless children
 
-      child_to_follow = children[children.length - 1]
-
-
+      child_to_follow = children[-1]
 
     end
 
@@ -192,11 +188,11 @@ class BTree
   end
 
   def write_to_node_file(node_file, parent, values, children = nil)
-    values_string = values.map(&:to_s).join(',')
+    values_string = values.join(',')
     values_string += ',' unless values.empty?
 
     children_string = nil
-    children_string = "#{children.map(&:to_s).join(',')}," if children && !children.empty?
+    children_string = "#{children.join(',')}," if children && !children.empty?
 
     File.open(node_file, 'w') do |writer|
       writer.write("#{parent}\n")
